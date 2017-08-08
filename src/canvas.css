@@ -1,0 +1,18 @@
+.canvas-container {
+  cursor: cell;
+  display: flex;
+  flex-direction: row;
+  align-items: space-around;
+}
+
+.canvas-container .canvas-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-container .cell {
+  height: 15px;
+  width: 15px;
+  flex-shrink: 1;
+  border: 1px solid black;
+}
