@@ -12,8 +12,8 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
   return {
-    onSquarePaint: (x,y, color) => {
-      dispatch(paintSquare(x,y, color));
+    onSquarePaint: (row, col, color) => {
+      dispatch(paintSquare(row, col, color));
     },
     startPainting: () => {
       dispatch(startPainting());

@@ -8,11 +8,11 @@ function setUpClearPixelGrid() {
     width: 25,
     height: 25
   }
-  var colorGrid = new Array(dimensions.width);
-  for (var col = 0; col < dimensions.width; col++){
-    colorGrid[col] = new Array(dimensions.height);
-    for (var row = 0; row < dimensions.height; row++){
-      colorGrid[col][row] = '#ffffff'
+  var colorGrid = new Array(dimensions.height);
+  for (var row = 0; row < dimensions.height; row++) {
+    colorGrid[row] = new Array(dimensions.width);
+    for (var col = 0; col < dimensions.width; col++) {
+      colorGrid[row][col] = '#ffffff';
     }
   }
   return colorGrid;
@@ -20,13 +20,13 @@ function setUpClearPixelGrid() {
 
 
 // need to return a copy of the current grid, w one square updated
-function updateSquare(grid, x, y, newValue) {
-  return grid.map((col, xIndex) => (
-    col.map((row, yIndex) => {
-      if (xIndex === x && yIndex === y) {
+function updateSquare(grid, rowIndex, colIndex, newValue) {
+  return grid.map((row, r) => (
+    row.map((col, c) => {
+      if (r === rowIndex && c === colIndex) {
         return newValue
       }
-      return grid[xIndex][yIndex];
+      return grid[r][c];
     })
   ));
 }
@@ -42,12 +42,12 @@ const canvas = (state = initialState, action) => {
         canvas: setUpClearPixelGrid()
       }
     case PAINT_SQUARE:
-      let {x, y, color} = action;
+      let {row, col, color} = action;
       // if the square is already the desired color, don't return a whole new grid!
-      if (state.canvas[x][y] === color) {
+      if (state.canvas[row][col] === color) {
         return state;
       }
-      let newCanvas = updateSquare(state.canvas, x, y, color);
+      let newCanvas = updateSquare(state.canvas, row, col, color);
       return {
         canvas: newCanvas
       }

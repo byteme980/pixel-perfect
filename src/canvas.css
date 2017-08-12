@@ -1,13 +1,13 @@
 .canvas-container {
   cursor: cell;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: space-around;
 }
 
-.canvas-container .canvas-col {
+.canvas-container .canvas-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .canvas-container .cell {

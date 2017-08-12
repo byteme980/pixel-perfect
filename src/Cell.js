@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 
 class Cell extends Component {
+  constructor() {
+    super();
+    this.onCellHover = this.onCellHover.bind(this);
+    this.onCellClick = this.onCellClick.bind(this);
+  }
   onCellClick(e) {
     e.preventDefault();
-    const {onClick, x, y} = this.props;
-    onClick(x, y);
+    const {onClick, row, col} = this.props;
+    onClick(row, col);
   }
   onCellHover() {
-    const {onHover, actionOnHover, x, y} = this.props;
-    actionOnHover ? onHover(x,y) : console.log('not in painting mode');
+    const {onHover, actionOnHover, row, col} = this.props;
+    actionOnHover && onHover(row, col);
   }
   render() {
     const {color, style} = this.props;
     return (
-      <div style={{backgroundColor: color, ...style}} className="cell" onMouseOver={this.onCellHover.bind(this)} onClick={this.onCellClick.bind(this)}>
+      <div style={{backgroundColor: color, ...style}} className="cell" onMouseOver={this.onCellHover} onClick={this.onCellClick}>
       </div>
     );
   }

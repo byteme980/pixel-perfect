@@ -6,26 +6,23 @@ class Palette extends Component {
     super(props);
     this.onCellClick = this.onCellClick.bind(this)
   }
-  onCellClick(x,y) {
+  onCellClick(row, col) {
     const {colors, onColorPicked} = this.props;
-    onColorPicked(colors[x][y]);
+    onColorPicked(colors[row][col]);
   }
-  computeCellStyle(x,y) {
+  computeCellStyle(row,col) {
     const {selectedColor, colors} = this.props;
-    if (colors[x][y] === selectedColor) {
+    if (colors[row][col] === selectedColor) {
       return {borderBottom: '10px solid lightblue'};
-    } else {
-      return {};
     }
   }
 
   render() {
     const {colors} = this.props;
-
-    let cells = colors.map((col, x) => (
-        col.map((row, y) => (
-            <Cell style={this.computeCellStyle(x,y)} key={x + ', ' + y} x={x} y={y} color={colors[x][y]} onClick={this.onCellClick}/>
-        ))
+    const cells = colors.map((row, r) => (
+      row.map((col, c) => (
+          <Cell style={this.computeCellStyle(r, c)} key={r + ', ' + c} row={r} col={c} color={colors[r][c]} onClick={this.onCellClick}/>
+      ))
     ));
 
     return (

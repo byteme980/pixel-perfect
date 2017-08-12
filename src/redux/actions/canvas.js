@@ -17,8 +17,8 @@ export const stopPainting = () => ({
   type: STOP_PAINTING
 });
 
-export const paintSquare = (x,y, color) => ({
-  type: PAINT_SQUARE, x, y, color
+export const paintSquare = (row, col, color) => ({
+  type: PAINT_SQUARE, row, col, color
 });
 
 export const clearCanvas = () => ({

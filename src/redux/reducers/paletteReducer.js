@@ -25,12 +25,6 @@ const paletteReducer = (state = initialState, action) => {
         ...state,
         color
       }
-    // case UNDO:
-    //   console.log('need to implement undo');
-    //   return state;
-    // case REDO:
-    //   console.log('need to implement redo');
-    //   return state;
     default:
       console.log('got this kind of action: ' + action.type );
       return state;
