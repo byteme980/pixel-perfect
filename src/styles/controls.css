@@ -4,7 +4,7 @@
 .control {
   width: 40px;
   cursor: pointer;
-  height: 40px;
+  height: auto;
   background-color: white;
   border: none;
   margin-right: 5px;

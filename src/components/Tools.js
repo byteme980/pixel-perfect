@@ -1,8 +1,8 @@
 import React from 'react';
-import bucketFillIcon from './assets/bucket_fill.png';
-import paintBrushIcon from './assets/paintbrush.png';
-import eraserIcon from './assets/eraser.png';
-import './tools.css';
+import bucketFillIcon from '../assets/bucket_fill.png';
+import paintBrushIcon from '../assets/paintbrush.png';
+import eraserIcon from '../assets/eraser.png';
+import '../styles/tools.css';
 
 const Tool = ({title, onClick, icon, isSelected}) => {
   return (

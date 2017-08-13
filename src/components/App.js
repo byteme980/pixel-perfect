@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import PaletteContainer from './containers/PaletteContainer';
-import CanvasContainer from './containers/CanvasContainer';
-import ControlsContainer from './containers/ControlsContainer';
-import ToolsContainer from './containers/ToolsContainer';
+import '../styles/App.css';
+import PaletteContainer from '../containers/PaletteContainer';
+import CanvasContainer from '../containers/CanvasContainer';
+import ControlsContainer from '../containers/ControlsContainer';
+import ToolsContainer from '../containers/ToolsContainer';
 
 class App extends Component {
   constructor() {

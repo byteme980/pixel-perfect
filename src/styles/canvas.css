@@ -11,14 +11,14 @@
 }
 
 .canvas-container.bucketFill {
-  cursor: url('./assets/bucket_fill_cur.png') 23 23, cell;
+  cursor: url('../assets/bucket_fill_cur.png') 23 23, cell;
 }
 
 .canvas-container.paintBrush {
-  cursor: url('./assets/paintbrush_cur.png') 23 23, cell;
+  cursor: url('../assets/paintbrush_cur.png') 23 23, cell;
 }
 .canvas-container.eraser {
-  cursor: url('./assets/eraser_cur.png') 23 20, cell;
+  cursor: url('../assets/eraser_cur.png') 23 20, cell;
 }
 
 .canvas-container .cell {

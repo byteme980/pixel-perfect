@@ -1,4 +1,4 @@
-import Canvas from '../Canvas'
+import Canvas from '../components/Canvas'
 import {connect} from 'react-redux'
 import {paintSquare, startPainting, stopPainting} from '../redux/actions/canvas';
 

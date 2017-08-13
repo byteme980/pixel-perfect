@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import Palette from '../Palette'
+import Palette from '../components/Palette'
 import {selectColor} from '../redux/actions/canvas';
 
 // note: colors may be more customizable in the future, so they should be handled by redux (at least for now)

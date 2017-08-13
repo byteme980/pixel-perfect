@@ -1,11 +1,11 @@
 import React from 'react';
-import undoIcon from './assets/undo.png';
-import redoIcon from './assets/redo.png';
-import clearIcon from './assets/blank.jpg';
-import bucketFillIcon from './assets/bucket_fill.png';
-import paintBrushIcon from './assets/paintbrush.png';
-import eraserIcon from './assets/eraser.png';
-import './controls.css';
+import undoIcon from '../assets/undo.png';
+import redoIcon from '../assets/redo.png';
+import clearIcon from '../assets/blank.jpg';
+import bucketFillIcon from '../assets/bucket_fill.png';
+import paintBrushIcon from '../assets/paintbrush.png';
+import eraserIcon from '../assets/eraser.png';
+import '../styles/controls.css';
 
 const Control = ({title, onClick, icon}) => (
   <button onClick={onClick} className={'control ' + title} title={title}>

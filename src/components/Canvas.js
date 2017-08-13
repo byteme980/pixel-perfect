@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Cell from './Cell';
-import './canvas.css';
+import '../styles/canvas.css';
 
 class Canvas extends Component {
   constructor() {
