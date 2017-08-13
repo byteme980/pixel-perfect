@@ -13,7 +13,7 @@ export const bucketFillIterative = (grid, row, col, targetColor) => {
 
   let newGrid = grid.map((row, r) => (
     row.map((col, c) => (
-      grid[r][c]
+      '' + grid[r][c]
     ))
   ));
 
@@ -45,8 +45,24 @@ export const bucketFillIterative = (grid, row, col, targetColor) => {
   return newGrid;
 }
 
+const bucketFill = (grid, row, col, originalColor, targetColor) => {
+  if (!isWithinGrid(grid, row, col) || originalColor === targetColor || grid[row][col] != originalColor) {
+    return;
+  } else {
+    grid[row][col] = targetColor;
+    bucketFill(grid, row-1, col, originalColor, targetColor);
+    bucketFill(grid, row, col+1, originalColor, targetColor);
+    bucketFill(grid, row+1, col, originalColor, targetColor);
+    bucketFill(grid, row, col-1, originalColor, targetColor);
+  }
+}
 
-const bucketFillRecursive = (grid, row, col, targetColor) => {
-
-
+export const bucketFillRecursive = (grid, row, col, targetColor) => {
+  let newGrid = grid.map((row, r) => (
+    row.map((col, c) => (
+      '' + grid[r][c]
+    ))
+  ));
+  bucketFill(newGrid, row, col, grid[row][col], targetColor);
+  return newGrid;
 }
