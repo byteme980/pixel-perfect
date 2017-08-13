@@ -8,8 +8,9 @@ class Canvas extends Component {
     this.paintWithColor = this.paintWithColor.bind(this);
   }
   paintWithColor(row, col) {
-    const {onSquarePaint, color} = this.props;
-    onSquarePaint(row, col, color);
+    console.log('in canvas paint w color')
+    const {onSquarePaint, color, mode} = this.props;
+    onSquarePaint(row, col, color, mode);
   }
   render() {
     let {colorGrid, isPainting, startPainting, stopPainting} = this.props;

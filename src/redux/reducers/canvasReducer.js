@@ -2,6 +2,7 @@ import {
   CLEAR_CANVAS, PAINT_SQUARE
 } from '../actions/canvas';
 import undoable, {distinctState} from 'redux-undo';
+import {bucketFillIterative} from './utils';
 
 function setUpClearPixelGrid() {
   const dimensions = {
@@ -26,7 +27,7 @@ function updateSquare(grid, rowIndex, colIndex, newValue) {
       if (r === rowIndex && c === colIndex) {
         return newValue
       }
-      return grid[r][c];
+      return '' + grid[r][c];
     })
   ));
 }
@@ -42,12 +43,26 @@ const canvas = (state = initialState, action) => {
         canvas: setUpClearPixelGrid()
       }
     case PAINT_SQUARE:
-      let {row, col, color} = action;
+      let {row, col, color, mode} = action;
       // if the square is already the desired color, don't return a whole new grid!
+      let newCanvas;
+
+      //  if in erase mode, we want the paint color to be white
+      if (mode === 'eraser') {
+        color = '#ffffff';
+      }
+
+      // if the current square is equal to the target color, we return the current state
       if (state.canvas[row][col] === color) {
         return state;
       }
-      let newCanvas = updateSquare(state.canvas, row, col, color);
+
+      if (mode === 'bucketFill') {
+        newCanvas = bucketFillIterative(state.canvas, row, col, color);
+      } else  {
+        newCanvas = updateSquare(state.canvas, row, col, color);
+      }
+
       return {
         canvas: newCanvas
       }
@@ -57,7 +72,8 @@ const canvas = (state = initialState, action) => {
 }
 
 const undoableCanvas = undoable(canvas, {
-  filter: distinctState()
+  filter: distinctState(),
+  limit: 10
 });
 
 export default undoableCanvas;

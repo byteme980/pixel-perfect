@@ -6,14 +6,16 @@ let mapStateToProps = state => {
   return {
     colorGrid: state.canvas.present.canvas,
     isPainting: state.palette.isPainting,
-    color: state.palette.color
+    color: state.palette.color,
+    mode: state.mode.mode
   }
 }
 
 let mapDispatchToProps = dispatch => {
   return {
-    onSquarePaint: (row, col, color) => {
-      dispatch(paintSquare(row, col, color));
+    onSquarePaint: (row, col, color, mode) => {
+      console.log('in action creator for square paint')
+      dispatch(paintSquare(row, col, color, mode));
     },
     startPainting: () => {
       dispatch(startPainting());

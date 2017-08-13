@@ -26,7 +26,6 @@ const paletteReducer = (state = initialState, action) => {
         color
       }
     default:
-      console.log('got this kind of action: ' + action.type );
       return state;
   }
 }
