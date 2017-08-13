@@ -1,5 +1,9 @@
+.controls-container {
+  display: inline-block;
+}
 .control {
   width: 40px;
+  cursor: pointer;
   height: 40px;
   background-color: white;
   border: none;

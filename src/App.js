@@ -3,7 +3,7 @@ import './App.css';
 import PaletteContainer from './containers/PaletteContainer';
 import CanvasContainer from './containers/CanvasContainer';
 import ControlsContainer from './containers/ControlsContainer';
-
+import ToolsContainer from './containers/ToolsContainer';
 
 class App extends Component {
   constructor() {
@@ -25,7 +25,10 @@ class App extends Component {
         <section className="main">
           <CanvasContainer />
           <PaletteContainer />
-          <ControlsContainer />
+          <div>
+            <ToolsContainer />
+            <ControlsContainer />
+          </div>
         </section>
       </div>
     );

@@ -1,0 +1,21 @@
+.tools-container {
+  display: inline-block;
+}
+.tools-container .selected {
+  border: 3px solid darkgray;
+}
+
+.tool {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: none;
+  box-sizing: content-box;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.tool img {
+  width: 100%;
+  height: 100%;
+}

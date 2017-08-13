@@ -13,7 +13,7 @@ class Palette extends Component {
   computeCellStyle(row,col) {
     const {selectedColor, colors} = this.props;
     if (colors[row][col] === selectedColor) {
-      return {borderBottom: '10px solid lightblue'};
+      return {borderBottom: '8px solid lightblue'};
     }
   }
 
