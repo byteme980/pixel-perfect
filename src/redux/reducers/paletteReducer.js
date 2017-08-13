@@ -4,7 +4,7 @@ import {
 
 const initialState = {
   isPainting: false,
-  color: '#ffffff'
+  color: '#000000'
 }
 
 const paletteReducer = (state = initialState, action) => {
