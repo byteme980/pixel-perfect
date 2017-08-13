@@ -13,7 +13,7 @@ class Canvas extends Component {
     onSquarePaint(row, col, color, mode);
   }
   render() {
-    let {colorGrid, isPainting, startPainting, stopPainting} = this.props;
+    let {colorGrid, isPainting, startPainting, stopPainting, mode} = this.props;
     let cells = colorGrid.map((row, r) => (
       <div className='canvas-row' key={'row-' + r} onMouseDown={startPainting} onMouseUp={stopPainting}>
         {
@@ -25,7 +25,7 @@ class Canvas extends Component {
     ))
 
     return (
-      <div className='canvas-container'>
+      <div className={'canvas-container ' + mode}>
         {cells}
       </div>
     )

@@ -1,5 +1,5 @@
 .canvas-container {
-  cursor: cell;
+  /*cursor: cell;*/
   display: flex;
   flex-direction: column;
   align-items: space-around;
@@ -8,6 +8,17 @@
 .canvas-container .canvas-row {
   display: flex;
   flex-direction: row;
+}
+
+.canvas-container.bucketFill {
+  cursor: url('./assets/bucket_fill_cur.png') 23 23, cell;
+}
+
+.canvas-container.paintBrush {
+  cursor: url('./assets/paintbrush_cur.png') 23 23, cell;
+}
+.canvas-container.eraser {
+  cursor: url('./assets/eraser_cur.png') 23 20, cell;
 }
 
 .canvas-container .cell {
