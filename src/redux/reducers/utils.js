@@ -35,7 +35,7 @@ export const bucketFillIterative = (grid, row, col, targetColor) => {
     ]
 
     neighborsToCheck.forEach((neighbor) => {
-      if (isWithinGrid(newGrid, neighbor[0], neighbor[1]) && newGrid[neighbor[0]][neighbor[1]] == currColor && !visited.has(String(neighbor))) {
+      if (isWithinGrid(newGrid, neighbor[0], neighbor[1]) && newGrid[neighbor[0]][neighbor[1]] === currColor && !visited.has(String(neighbor))) {
         cellsToExplore.push([neighbor[0], neighbor[1]]);
       }
       visited.add(String(neighbor));
@@ -46,7 +46,7 @@ export const bucketFillIterative = (grid, row, col, targetColor) => {
 }
 
 const bucketFill = (grid, row, col, originalColor, targetColor) => {
-  if (!isWithinGrid(grid, row, col) || originalColor === targetColor || grid[row][col] != originalColor) {
+  if (!isWithinGrid(grid, row, col) || originalColor === targetColor || grid[row][col] !== originalColor) {
     return;
   } else {
     grid[row][col] = targetColor;
