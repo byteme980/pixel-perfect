@@ -1,13 +1,19 @@
 .canvas-container {
   /*cursor: cell;*/
+  width: 98%;
+  height: 400px;
+  min-width: 320px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: space-around;
+  align-items: center;
 }
 
 .canvas-container .canvas-row {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  height: 4%;
 }
 
 .canvas-container.bucketFill {
@@ -22,8 +28,9 @@
 }
 
 .canvas-container .cell {
-  height: 15px;
-  width: 15px;
+  height: 100%;
+  width: 4%; /* 1/25 cells, each is 4% of it */
   flex-shrink: 1;
+  box-sizing: content-box;
   border: 1px solid black;
 }
