@@ -18,7 +18,7 @@ class Cell extends Component {
   render() {
     const {color, style} = this.props;
     return (
-      <div style={{backgroundColor: color, ...style}} className="cell" onMouseOver={this.onCellHover} onClick={this.onCellClick}>
+      <div style={{backgroundColor: color, ...style}} className="cell" onTouchMove={this.onCellHover}  onMouseOver={this.onCellHover} onClick={this.onCellClick}>
       </div>
     );
   }

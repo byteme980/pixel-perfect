@@ -15,7 +15,7 @@ class Canvas extends Component {
   render() {
     let {colorGrid, isPainting, startPainting, stopPainting, mode} = this.props;
     let cells = colorGrid.map((row, r) => (
-      <div className='canvas-row' key={'row-' + r} onMouseDown={startPainting} onMouseUp={stopPainting}>
+      <div className='canvas-row' key={'row-' + r} onTouchStart={startPainting} onTouchEnd={stopPainting} onMouseDown={startPainting} onMouseUp={stopPainting}>
         {
           row.map((col, c) => (
             <Cell color={colorGrid[r][c]} actionOnHover={isPainting} onHover={this.paintWithColor} onClick={this.paintWithColor} key={r + ',' + c}  row={r} col={c}/>
