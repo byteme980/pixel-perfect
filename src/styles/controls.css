@@ -11,7 +11,13 @@
   box-sizing: content-box;
   margin-right: 5px;
 }
+
 .control img {
   width: 100%;
   height: auto;
+}
+
+.control img.disabled {
+  filter: invert(80%);
+  cursor: not-allowed;
 }
