@@ -8,9 +8,10 @@
   cursor: pointer;
   background-color: white;
   border: none;
+  box-sizing: content-box;
   margin-right: 5px;
 }
 .control img {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
