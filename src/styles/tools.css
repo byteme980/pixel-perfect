@@ -2,7 +2,7 @@
   display: inline-block;
 }
 .tools-container .selected {
-  border: 3px solid darkgray;
+  filter: invert(100%);
 }
 
 .tool {
