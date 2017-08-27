@@ -5,7 +5,7 @@ import clearIcon from '../assets/blank.jpg';
 import '../styles/controls.css';
 
 const Control = ({title, onClick, icon, disabled}) => (
-  <button onClick={onClick} className={'control ' + title} title={title}>
+  <button onClick={onClick} className={'control ' + title} title={title} disabled={disabled}>
      <img src={icon} alt={title} className={disabled ? 'disabled' : 'null'}/>
   </button>
 )
