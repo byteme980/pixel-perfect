@@ -14,7 +14,6 @@ let mapStateToProps = state => {
 let mapDispatchToProps = dispatch => {
   return {
     onSquarePaint: (row, col, color, mode) => {
-      console.log('in action creator for square paint')
       dispatch(paintSquare(row, col, color, mode));
     },
     startPainting: () => {

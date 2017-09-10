@@ -4,16 +4,16 @@ import redoIcon from '../assets/redo.png';
 import clearIcon from '../assets/blank.jpg';
 import '../styles/controls.css';
 
-const Control = ({title, onClick, icon}) => (
-  <button onClick={onClick} className={'control ' + title} title={title}>
-     <img src={icon} alt={title} />
+const Control = ({title, onClick, icon, disabled}) => (
+  <button onClick={onClick} className={'control ' + title} title={title} disabled={disabled}>
+     <img src={icon} alt={title} className={disabled ? 'disabled' : 'null'}/>
   </button>
 )
 
-const Controls = ({clearCanvas, undo, redo, selectBucketFill, selectPaintBrush, selectEraser}) => (
+const Controls = ({clearCanvas, undo, canUndo, redo, canRedo, selectBucketFill, selectPaintBrush, selectEraser}) => (
   <div className='controls-container'>
-    <Control key='undo' onClick={undo} title='undo' icon={undoIcon} />
-    <Control key='redo' onClick={redo} title='redo' icon={redoIcon}/>
+    <Control key='undo' onClick={undo} disabled={!canUndo} title='undo' icon={undoIcon} />
+    <Control key='redo' onClick={redo} disabled={!canRedo} title='redo' icon={redoIcon}/>
     <Control key='clear' onClick={clearCanvas} title='clear' icon={clearIcon}/>
   </div>
 )

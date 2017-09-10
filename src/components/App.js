@@ -25,7 +25,7 @@ class App extends Component {
         <section className="main">
           <CanvasContainer />
           <PaletteContainer />
-          <div>
+          <div className="actions">
             <ToolsContainer />
             <ControlsContainer />
           </div>

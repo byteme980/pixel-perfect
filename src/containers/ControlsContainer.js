@@ -4,7 +4,12 @@ import {clearCanvas, selectPaintBrush, selectBucketFill, selectEraser} from '../
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 
 
-let mapDispatchToProps = dispatch => {
+let mapStateToProps = (state) => ({
+  canUndo: state.canvas.past.length > 0,
+  canRedo: state.canvas.future.length > 0
+});
+
+let mapDispatchToProps = (dispatch) => {
   return {
     clearCanvas: () => {
       dispatch(clearCanvas());
@@ -28,7 +33,7 @@ let mapDispatchToProps = dispatch => {
 }
 
 const ControlsContainer =  connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Controls);
 

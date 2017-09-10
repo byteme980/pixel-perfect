@@ -11,14 +11,14 @@ class Cell extends Component {
     const {onClick, row, col} = this.props;
     onClick(row, col);
   }
-  onCellHover() {
+  onCellHover(e) {
     const {onHover, actionOnHover, row, col} = this.props;
     actionOnHover && onHover(row, col);
   }
   render() {
     const {color, style} = this.props;
     return (
-      <div style={{backgroundColor: color, ...style}} className="cell" onTouchMove={this.onCellHover}  onMouseOver={this.onCellHover} onClick={this.onCellClick}>
+      <div style={{backgroundColor: color, ...style}} className="cell" onMouseOver={this.onCellHover} onClick={this.onCellClick}>
       </div>
     );
   }

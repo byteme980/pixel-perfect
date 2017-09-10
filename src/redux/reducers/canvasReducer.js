@@ -27,7 +27,7 @@ function updateSquare(grid, rowIndex, colIndex, newValue) {
       if (r === rowIndex && c === colIndex) {
         return newValue
       }
-      return '' + grid[r][c];
+      return grid[r][c];
     })
   ));
 }
